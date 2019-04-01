@@ -1,0 +1,30 @@
+h1{
+	color: red;
+}
+.top-header-container, footer{
+	padding: 5px;
+}
+.header-banner-background{
+	height: 150px;
+	background-color: rgba(0,0,0,0.9);
+	background-image: url(http://sda.pu.go.id/bwssulawesi4/assets/images/slide-banner/thumb_1800X650_Banner-Web.png);
+	background-position: left -10px top -100px;
+}
+.header-title-text{
+	font-size: 20px;
+	font-weight: bold;
+	color: #fefefe;
+}
+
+.main-section{
+	min-height: 600px;
+	border: 1px solid #f5f5f5;
+}
+
+.header-logo{
+	float: left;
+}
+
+footer{
+	text-align: center;
+}
