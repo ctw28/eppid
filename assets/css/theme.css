@@ -1,4 +1,11 @@
-.primary-color, .primary-color a{
+.primary-color-container, .primary-color-container a{
 	background-color: #0057A8 !important;
 	color: #fefefe !important;
+}
+.primary-color {
+	color: #fefefe !important;
+}
+
+h1, h2, h3, h4, h5, h6, a {
+	color: #0057A8;
 }
