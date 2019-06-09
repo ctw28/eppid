@@ -7,7 +7,12 @@ class webModel extends CI_model {
 		return $this->db->query("SELECT * FROM t_menu");
 	}
 	
+	public function getInformationByKategori($key){
+		$data="SELECT nama_kategori, keterangan_kategori, ti.id_informasi, judul_informasi, keterangan_informasi, informasi_parent, jenis_detail, informasi_detail
+		FROM t_informasi_kategori tik INNER JOIN t_informasi ti ON ti.id_informasi_kategori = tik.id_informasi_kategori INNER JOIN t_informasi_detail tid ON tid.id_informasi = ti.id_informasi WHERE tik.id_informasi_kategori = $key";
+		return $this->db->query($data);
 
+	}
 
 	public function getdata($key)
 	{
@@ -46,11 +51,11 @@ class webModel extends CI_model {
 
 	public function lihat_data()
 	{
-				$data="SELECT t_file_sip.id_file_sip,
-				 t_file_sip.judul_file_sip,
-				 t_kategori_user_sip.kategori_user_sip
-				 FROM t_file_sip, t_kategori_user_sip
-				 WHERE t_kategori_user_sip.id_kategori_user_sip = t_file_sip.id_kategori_user_sip";
+		$data="SELECT t_file_sip.id_file_sip,
+		t_file_sip.judul_file_sip,
+		t_kategori_user_sip.kategori_user_sip
+		FROM t_file_sip, t_kategori_user_sip
+		WHERE t_kategori_user_sip.id_kategori_user_sip = t_file_sip.id_kategori_user_sip";
 		return $this->db->query($data);
 
 	}
@@ -58,7 +63,7 @@ class webModel extends CI_model {
 
 
 
-public function getdata_user_sip($key)
+	public function getdata_user_sip($key)
 	{
 		$this->db->where('id_user_sip',$key);
 		$hasil = $this->db->get('sip_user');
@@ -68,14 +73,14 @@ public function getdata_user_sip($key)
 	public function getdata2_sip($key)
 	{
 		$data="SELECT sip_user.id_user_sip,
-				 sip_user.kategori_user,
-				 sip_user.username,
-				 sip_user.password,
-				 sip_user.nama_user_sip,
-				 sip_user.foto_user_sip,
-				 t_kategori_user_sip.kategori_user_sip
-				 FROM sip_user, t_kategori_user_sip
-				 WHERE sip_user.id_user_sip = '$key' AND t_kategori_user_sip.id_kategori_user_sip = sip_user.kategori_user";
+		sip_user.kategori_user,
+		sip_user.username,
+		sip_user.password,
+		sip_user.nama_user_sip,
+		sip_user.foto_user_sip,
+		t_kategori_user_sip.kategori_user_sip
+		FROM sip_user, t_kategori_user_sip
+		WHERE sip_user.id_user_sip = '$key' AND t_kategori_user_sip.id_kategori_user_sip = sip_user.kategori_user";
 		return $this->db->query($data);
 	}
 

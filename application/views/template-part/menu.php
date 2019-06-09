@@ -6,40 +6,40 @@
     <ul class="navbar-nav">
 
       <?php
-        foreach ($list_menu as $menu) {
-            if(isset($menu['sub_menu'])){
-      ?>
+      foreach ($list_menu as $menu) {
+        if(isset($menu['sub_menu'])){
+          ?>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo $menu['menu']; ?>
-        </a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo $menu['menu']; ?>
+            </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <?php
+              <?php
               foreach ($menu['sub_menu'] as $submenu) {
-            ?>
-              <a class="dropdown-item" href="#"><?php echo $submenu['menu']; ?></a>
-      
-      <?php              
-          }
-          echo "</div>";
-          echo "</li>";
+                ?>
+                <a class="dropdown-item" href="#"><?php echo $submenu['menu']; ?></a>
+                
+                <?php              
+              }
+              echo "</div>";
+              echo "</li>";
 
             }
             else{
-        
-      ?>
-      <li class="nav-item">
-        <a class="nav-link" href="#"><?php echo $menu['menu']; ?> <span class="sr-only">(current)</span></a>
-      </li>
-      <?php 
+              
+              ?>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><?php echo $menu['menu']; ?> <span class="sr-only">(current)</span></a>
+              </li>
+              <?php 
+            }
           }
-        }
 
-      ?>
+          ?>
 
 
-    </ul>
-  </div>
-</nav>
+        </ul>
+      </div>
+    </nav>
 

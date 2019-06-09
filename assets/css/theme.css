@@ -7,5 +7,15 @@
 }
 
 h1, h2, h3, h4, h5, h6, a {
-	color: #0057A8;
+	/*color: #0057A8;*/
+}
+
+.list-container {
+	width: 100%; 
+	text-align: left; 
+	border: 1px solid #0057A8;
+	padding: .175rem .75rem;
+	font-size: 15px;
+	/*color: yellow;*/
+	/*background-color: #0057A8;*/
 }

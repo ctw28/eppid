@@ -1,7 +1,7 @@
 h2, h3, h4 {
 	font-size: 18px;
 	font-weight: bold;
-}
+	}
 ol .point{
 	list-style-type: upper-alpha;
 	font-weight: bold;
@@ -15,6 +15,7 @@ ol ul{
 
 .top-header-container, footer{
 	padding: 5px;
+
 }
 .header-banner-background{
 	height: 150px;
@@ -34,10 +35,24 @@ ol ul{
 	padding: 15px;
 }
 
+.card-header{
+	padding: 2px 0;
+	width: auto !important;
+	text-align: center !important;t
+
+}
+.accordion{
+	text-align: center !important;
+
+}
 .header-logo{
 	float: left;
 }
 
+td{
+	padding: 0.05rem !important;
+	font-size: 15px;
+}
 footer{
 	text-align: center;
 }

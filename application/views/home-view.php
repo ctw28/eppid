@@ -22,43 +22,93 @@
 		</div>
     </header>
     <section class="container main-section">
+      <h2>INFORMASI PUBLIK YANG WAJIB DISEDIAKAN DAN DIUMUMKAN SECARA BERKALA</h2>
+      <ca
 
 
+    <div id="accordion" style="background-color: #FDFFD7;">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn list-container" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              1. Informasi tentang Profil BWS Sulawesi IV Kendari
+            </button>
+          </h5>
+        </div>
+        
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="border: 1px solid #0057A8;">
+          <div class="card-body">
+            <table class="table table-sm">
+              <thead>
+                <th width="5%">No</th>
+                <th width="75%">Jenis</th>
+                <th width="20%" class="text-center">Informasi / Dokumen</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Informasi mengenai kedudukan, domisili, beserta alamat lengkap dan kontak</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Tugas dan Fungsi</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Struktur Organisasi</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Gambaran Umum Satuan Kerjak</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Profil Singkat Pejabat Struktural</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Laporan harta kekayaan bagi pejabat negara yang telah diperiksa, diverifikasi dan telah dikirimkan oleh KPK ke BWS Sulawesi IV Kendari untuk diumumkan</td>
+                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <ul>
+            </ul>
+          </div>
+        </div>
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn list-container collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              2. Ringkasan informasi tentang program dan/atau kegiatan yang sedang dijalankan dalam lingkup BWS Sulawesi IV Kendari
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn list-container collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              3. ringkasan  informasi  tentang  kinerja  dalam  lingkup  BWS Sulawesi IV Kendari
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-
-    	<h2>INFORMASI PUBLIK YANG WAJIB DISEDIAKAN DAN DIUMUMKAN SECARA BERKALA</h2>
-        <ol>
-            <li class="point">Informasi tentang Profil BWS Sulawesi IV Kendari
-                <ul>
-                    <li><a href="">Informasi mengenai kedudukan, domisili, beserta alamat lengkap dan kontak</a></li>
-                    <li><a href="">Tugas dan Fungsi</a></li>
-                    <li><a href="http://sda.pu.go.id/bwssulawesi4/profil/struktur" target="_blank">Struktur Organisasi</a></li>
-                    <li><a href="">Gambaran Umum Satuan Kerja</a></li>
-                    <li><a href="">Profil Singkat Pejabat Struktural</a></li>
-                    <li><a href="">Laporan harta kekayaan bagi pejabat negara yang telah diperiksa, diverifikasi dan telah dikirimkan oleh KPK ke BWS Sulawesi IV Kendari untuk diumumkan</a></li>
-                </ul>
-            </li>
-            <li class="point">Ringkasan informasi tentang program dan/atau kegiatan yang sedang dijalankan dalam lingkup BWS Sulawesi IV Kendari
-                <ul>
-                    <li><a href="" target="_blank">Nama Program dan Kegiatan</a></li>
-                    <li><a href="" target="_blank">penanggungjawab, pelaksana program dan kegiatan serta nomor telepon dan/atau alamat yang dapat dihubungi</a></li>
-                    <li><a href="" target="_blank">target dan/atau capaian program dan kegiatan</a></li>
-                    <li><a href="" target="_blank">jadwal pelaksanaan program dan kegiatan</a></li>
-                    <li><a href="" target="_blank">anggaran program dan kegiatan yang meliputi sumberdanjumlah</a></li>
-                    <li><a href="" target="_blank">agenda penting terkait pelaksanaan tugas BWS Sulawesi IV Kendari</a></li>
-                    <li><a href="" target="_blank">informasi khusus lainnya yang berkaitan langsung dengan hak-hak masyarakat</a></li>
-                    <li><a href="" target="_blank">informasi tentang penerimaan calon pegawai dan/atau pejabat BWS Sulawesi IV Kendari</a></li>
-                    <li><a href="" target="_blank">informasi tentang penerimaan calon pegawai dan/atau pejabat BWS Sulawesi IV Kendari</a></li>
-                    <li><a href="" target="_blank">informasi   tentang   penerimaan   calon   peserta   didik   pada Badan   Publik   yang menyelenggarakan kegiatan pendidikan untuk umum</a></li>
-                </ul>
-            </li>
-            <li class="point">ringkasan  informasi  tentang  kinerja  dalam  lingkup  BWS Sulawesi IV Kendari berupa narasi tentang realisasi kegiatan yang telah maupun sedang dijalankan beserta capaiannya</li>
-            <li class="point">Ringkasan Laporan Keuangan</li>
-            <li class="point">Ringkasan Laporan Akses Informasi Publik</li>
-            <li class="point">Informasi tentang peraturan, keputusan, dan/atau kebijakan yang mengikat dan/atau berdampak bagi publik yang dikeluarkan oleh BWS Sulawesi IV Kendari</li>
-        </ol>
-
+     
 
     </section>
     <footer class="container primary-color-container">
