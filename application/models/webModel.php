@@ -8,11 +8,18 @@ class webModel extends CI_model {
 	}
 	
 	public function getInformationByKategori($key){
-		$data="SELECT nama_kategori, keterangan_kategori, ti.id_informasi, judul_informasi, keterangan_informasi, informasi_parent, jenis_detail, informasi_detail
-		FROM t_informasi_kategori tik INNER JOIN t_informasi ti ON ti.id_informasi_kategori = tik.id_informasi_kategori INNER JOIN t_informasi_detail tid ON tid.id_informasi = ti.id_informasi WHERE tik.id_informasi_kategori = $key ORDER BY ti.id_informasi ASC";
+		$data="SELECT nama_kategori, keterangan_kategori, ti.id_informasi, judul_informasi, keterangan_informasi, informasi_parent
+		FROM t_informasi_kategori tik INNER JOIN t_informasi ti ON ti.id_informasi_kategori = tik.id_informasi_kategori WHERE tik.id_informasi_kategori = $key ORDER BY ti.id_informasi ASC";
 		return $this->db->query($data);
 
 	}
+
+	public function getInformationDetail($key){
+		$data="SELECT jenis_detail, informasi_detail FROM t_informasi_detail WHERE id_informasi = $key";
+		return $this->db->query($data);
+	}
+
+
 
 	public function getdata($key)
 	{
