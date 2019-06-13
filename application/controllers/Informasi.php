@@ -13,7 +13,6 @@ class Informasi extends CI_Controller {
 		$informationByKategori = $this->webModel->getInformationByKategori(1);
 
 		$part['list_menu'] = [];
-		$part['list_informasi'] = [];
 
 		foreach ($allMenu->result() as $row) {
 			$namaMenu = $row->nama_menu;
@@ -39,6 +38,9 @@ class Informasi extends CI_Controller {
 
 		// echo json_encode($part['list_menu']);
 
+		$part['list_informasi'] = [];
+		// $part['sub_informasi'] = [];
+
 		foreach ($informationByKategori->result() as $row) {
 			$informasiKategori = $row->nama_kategori;
 			$part['list_informasi']['kategori'] = $informasiKategori; 
@@ -53,7 +55,7 @@ class Informasi extends CI_Controller {
 			}
 			else{
 				$id = $row->informasi_parent;
-				echo $id;
+				// echo 'sub_menu';
 				$part['list_informasi']['informasi_'.$id]['sub_informasi'][] = [
 					'id'=>$row->id_informasi,
 					'judul_informasi'=>$row->judul_informasi,
@@ -65,10 +67,10 @@ class Informasi extends CI_Controller {
 		}
 
 
-		echo json_encode($part['list_informasi']);
+		// echo json_encode($part['list_informasi']);
 
 
 		// print_r($part['list_informasi']);
-		// $this->load->view('template-part/template', $part);
+		$this->load->view('template-part/template', $part);
 	}
 }
