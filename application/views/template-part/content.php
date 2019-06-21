@@ -12,6 +12,7 @@
 		<div class="card-header" id="heading<?= $i;?>">
 			<h5 class="mb-0">
 				<button class="btn list-container" data-toggle="collapse" data-target="#collapse<?= $i;?>" aria-expanded="true" aria-controls="collapse<?= $i;?>">
+					<?= $i?>. 
 					<?= $list['judul_informasi'];?>
 				</button>
 			</h5>

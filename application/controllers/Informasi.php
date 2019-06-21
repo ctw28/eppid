@@ -10,7 +10,7 @@ class Informasi extends CI_Controller {
 		$this->load->model('webModel');
 
 		$key = $this->uri->segment(3);
-		echo $key;
+		// echo $key;
 		
 		$allMenu = $this->webModel->getAllMenu();
 		$informationByKategori = $this->webModel->getInformationByKategori($key);
