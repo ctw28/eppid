@@ -1,13 +1,28 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Informasi_proses extends CI_Controller {
+
+	function __construct(){
+		parent::__construct();		
+		$this->load->model('adminModel');
+ 
+	}
 
 	public function index()
 	{
-		// print_r($part['list_menu']);
-		// $this->load->view('admin/informasi-kategori-tambah');
-		echo "aaaaaaaaaa";
+		$data['nama_menu'] = $this->input->post('inputNamaMenu');
+		$data['keterangan_menu'] = $this->input->post('inputKeteranganMenu');
+		$data['menu_seo'] = $this->input->post('inputMenuSeo');
+		$data['parent_menu'] = $this->input->post('inputParentMenu');
+
+		if($this->adminModel->insertData('t_menu', $data)){
+			redirect('admin/informasi/kategori');
+		}
+		else{
+			echo "ada masalah. coba lagi";
+		}
+
 	}
 	
 	// public function kategoriSimpan()

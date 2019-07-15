@@ -10,23 +10,22 @@ class Informasi extends CI_Controller {
 		$this->load->model('webModel');
 
 		$key = $this->uri->segment(3);
-		// echo $key;
 		
 		$allMenu = $this->webModel->getAllMenu();
 		$informationByKategori = $this->webModel->getInformationByKategori($key);
 
 		$part['list_menu'] = [];
-		$part['list_informasi'] = [];
+		$part['list_informasi'] = array();
 
 		foreach ($allMenu->result() as $row) {
 			$namaMenu = $row->nama_menu;
-			$link = $row->link;
+			$menu_seo = $row->menu_seo;
 			if($row->parent_menu == NULL){
 				$id = $row->id_menu;
 				$part['list_menu']['menu_'.$id] = [
 					'id'=>$id,
 					'menu'=>$namaMenu,
-					'link'=>$link
+					'menu_seo'=>$menu_seo
 				];
 			}
 			else{
@@ -34,39 +33,56 @@ class Informasi extends CI_Controller {
 				$part['list_menu']['menu_'.$id]['sub_menu'][] = [
 					'id'=>$row->id_menu,
 					'menu'=>$namaMenu,
-					'link'=>$link
+					'menu_seo'=>$menu_seo
 				];
 			}
 		}
+
 
 		foreach ($informationByKategori->result() as $row) {
-			$informasiKategori = $row->nama_kategori;
-			$part['list_informasi']['kategori'] = $informasiKategori; 
-			if($row->informasi_parent == NULL){
-				$id = $row->id_informasi;
-				$part['list_informasi']['informasi_'.$id] = [
-					'id'=>$id,
-					'judul_informasi'=>$row->judul_informasi
-				];
-			}
-			else{
-				$id = $row->informasi_parent;
-				$part['list_informasi']['informasi_'.$id]['sub_informasi']['detail_'.$row->id_informasi] = [
-					'id'=>$row->id_informasi,
-					'judul_informasi'=>$row->judul_informasi
-				];
+			$idInformasi		= $row->id_informasi;
+			$informasiKategori 	= $row->nama_menu;
+			// $part['list_informasi']['kategori'] = $informasiKategori;
+			$informasi = array();
+			$data = array();
+			$kategori = $row->nama_menu;
 
-				$informationDetail = $this->webModel->getInformationDetail($row->id_informasi);
+			$informasi = array(
+				'id'=>$idInformasi,
+				'judul_informasi'=>$row->judul_informasi
+			);
 
-				foreach ($informationDetail->result() as $detail) {
-					$part['list_informasi']['informasi_'.$id]['sub_informasi']['detail_'.$row->id_informasi]['detail'][] = [
-						'jenis_detail'=>$detail->jenis_detail,
-						'informasi_detail'=>$detail->informasi_detail
-					];
+			$informationSubKategori = $this->webModel->getInformationDetailByParent($idInformasi);
+			
+			if($informationSubKategori->num_rows()>0){
+				$informasi = array(
+					'id'=>$idInformasi,
+					'judul_informasi'=>$row->judul_informasi,
+					'sub_informasi' => array()
+				);
+
+				foreach ($informationSubKategori->result() as $subMenu) {
+					$data = array(
+							'judul_informasi'=>$subMenu->judul_informasi,
+							'detail' => array()
+						);
+
+					$informationDetail = $this->webModel->getInformationDetail($subMenu->id_informasi);
+
+					foreach($informationDetail->result() as $detail) {
+						$detail = array(
+								'jenis_detail'=>$detail->jenis_detail,
+								'informasi_detail'=>$detail->informasi_detail
+						);
+						array_push($data['detail'], $detail);				
+					}
+				array_push($informasi['sub_informasi'], $data);				
 				}
-			}
+			} //end jika memiliki sub kategori
+			array_push($part['list_informasi'], $informasi);
 		}
 		// echo json_encode($part['list_informasi']);
+		// echo "{\"data\":" . json_encode($part['list_informasi']) . "}";
 		$this->load->view('template-part/template', $part);
 	}
 }

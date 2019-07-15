@@ -13,13 +13,13 @@ class Home extends CI_Controller {
 		$part['list_menu'] = [];
 		foreach ($allMenu->result() as $row) {
 			$namaMenu = $row->nama_menu;
-			$link = $row->link;
+			$menu_seo = $row->menu_seo;
 			if($row->parent_menu == NULL){
 				$id = $row->id_menu;
 				$part['list_menu']['menu_'.$id] = [
 					'id'=>$id,
 					'menu'=>$namaMenu,
-					'link'=>$link
+					'menu_seo'=>$menu_seo
 				];
 			}
 			else{
@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 				$part['list_menu']['menu_'.$id]['sub_menu'][] = [
 					'id'=>$row->id_menu,
 					'menu'=>$namaMenu,
-					'link'=>$link
+					'menu_seo'=>$menu_seo
 				];
 			}
 

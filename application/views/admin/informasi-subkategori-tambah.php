@@ -13,17 +13,17 @@
   </head>
   <body>
     <div class="container">
-      <h1>FORM TAMBAH MENU/KATEGORI </h1>
+      <h1>FORM TAMBAH MENU/KATEGORI</h1>
 
-      <?php echo form_open_multipart('admin/informasi_proses', 'class="form-horizontal"', 'role="form"'); 
+      <?php echo form_open_multipart('admin/sub_kategori_proses', 'class="form-horizontal"', 'role="form"'); 
       ?>
         <div class="form-group">
-          <label for="inputParentMenu">Menu / Kategori</label>
-          <select class="form-control" id="inputParentMenu" name="inputParentMenu">
-            <option>Pilih Menu / Kategori</option>
+          <label for="inputParentSubKategori">Pilih Kategori Informasi</label>
+          <select class="form-control" id="inputParentSubKategori" name="inputParentSubKategori">
+            <option>Parent</option>
             <?php 
               $i=1;
-              foreach ($dataKategori->result() as $row) {
+              foreach ($dataSubKategori->result() as $row) {
             ?>
               <option value="<?= $row->id_menu ?>"><?= $row->nama_menu ?></option>
 
@@ -34,16 +34,28 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="inputNamaMenu">Nama Menu/Kategori</label>
-          <input type="text" class="form-control" id="inputNamaMenu" name="inputNamaMenu" placeholder="Isikan Nama Kategori">
+          <label for="inputNamaSubKategori">Nama Sub Kategori</label>
+          <input type="text" class="form-control" id="inputNamaSubKategori" name="inputNamaSubKategori" placeholder="Isikan Nama Kategori">
         </div>
         <div class="form-group">
-          <label for="inputKeteranganMenu">Keterangan Menu/Kategori</label>
-          <textarea id="inputKeteranganMenu" name="inputKeteranganMenu" class="form-control"></textarea> 
+          <label for="inputKeteranganSubKategori">Keterangan Sub Kategori</label>
+          <textarea id="inputKeteranganSubKategori" name="inputKeteranganSubKategori" class="form-control"></textarea> 
         </div>
         <div class="form-group">
-          <label for="inputMenuSeo">link / seo</label>
-          <input type="text" class="form-control" id="inputMenuSeo" name="inputMenuSeo" placeholder="">
+          <label for="inputParent">Parent Sub Informasi</label>
+          <select class="form-control" id="inputParent" name="inputParent">
+            <option>Parent</option>
+            <?php 
+              $i=1;
+              foreach ($dataSubKategori->result() as $row) {
+            ?>
+              <option value="<?= $row->id_informasi ?>"><?= $row->judul_informasi ?></option>
+
+            <?php 
+              }
+
+            ?>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>      
@@ -53,18 +65,20 @@
         <thead>
           <th>No.</th>
           <th>Nama Kategori</th>
+          <th>Nama Sub Kategori</th>
           <th>Keterangan</th>
           <th>Aksi</th>
         </thead>
         <tbody>
           <?php 
             $i=1;
-            foreach ($dataKategori->result() as $row) {
+            foreach ($dataSubKategori->result() as $row) {
 
               ?>
               <tr>
                 <td><?= $i++ ?></td>
                 <td><?= $row->nama_menu ?></td>
+                <td><?= $row->judul_informasi ?></td>
                 <td><?= $row->keterangan_menu ?></td>
                 <td>
                   <a href="">edit</a>

@@ -19,27 +19,23 @@
               <?php
               foreach ($menu['sub_menu'] as $submenu) {
                 ?>
-                <a class="dropdown-item" href="<?= base_url()?><?php echo $submenu['link']; ?>"><?php echo $submenu['menu']; ?></a>
+                <a class="dropdown-item" href="<?= base_url()?>informasi/tampil/<?php echo $submenu['menu_seo']; ?>"><?php echo $submenu['menu']; ?></a>
                 
                 <?php              
               }
               echo "</div>";
               echo "</li>";
-
             }
             else{
               
               ?>
               <li class="nav-item">
-                <a class="nav-link" href="<?= base_url()?><?php echo $menu['link']; ?>"><?php echo $menu['menu']; ?> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?= base_url()?>informasi/tampil/<?php echo $menu['menu_seo']; ?>"><?php echo $menu['menu']; ?> <span class="sr-only">(current)</span></a>
               </li>
               <?php 
             }
           }
-
           ?>
-
-
         </ul>
       </div>
     </nav>
