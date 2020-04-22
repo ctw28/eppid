@@ -24,8 +24,6 @@
     <section class="container main-section">
       <h2>INFORMASI PUBLIK YANG WAJIB DISEDIAKAN DAN DIUMUMKAN SECARA BERKALA</h2>
       
-
-
     <div id="accordion" style="background-color: #FDFFD7;">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">

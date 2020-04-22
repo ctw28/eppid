@@ -15,33 +15,29 @@
     <div class="container">
       <h1>FORM TAMBAH MENU/KATEGORI </h1>
 
-      <?php echo form_open_multipart('admin/informasi_proses', 'class="form-horizontal"', 'role="form"'); 
+      <?php echo form_open_multipart('admin/detail_proses', 'class="form-horizontal"', 'role="form"'); 
       ?>
         <div class="form-group">
-          <label for="inputParentMenu">Menu / Kategori</label>
+          <label for="inputParentMenu">Kategori / Sub Kategori</label>
           <select class="form-control" id="inputParentMenu" name="inputParentMenu">
-            <option value="">Pilih Menu / Kategori</option>
+            <option value="">Pilih Kategori / Sub Kategori</option>
             <?php 
               $i=1;
-              foreach ($dataKategori->result() as $row) {
+              foreach ($dataDetail->result() as $row) {
             ?>
-              <option value="<?= $row->id_menu ?>"><?= $row->nama_menu ?></option>
+              <option value="<?= $row->id_menu ?>"><?= $row->judul_informasi ?></option>
             <?php 
               }
             ?>
           </select>
         </div>
         <div class="form-group">
-          <label for="inputNamaMenu">Nama Menu/Kategori</label>
-          <input type="text" class="form-control" id="inputNamaMenu" name="inputNamaMenu" placeholder="Isikan Nama Kategori">
+          <label for="inputUrl">Url</label>
+          <input type="text" class="form-control" id="inputUrl" name="inputUrl" placeholder="Isikan Url">
         </div>
         <div class="form-group">
-          <label for="inputKeteranganMenu">Keterangan Menu/Kategori</label>
-          <textarea id="inputKeteranganMenu" name="inputKeteranganMenu" class="form-control"></textarea> 
-        </div>
-        <div class="form-group">
-          <label for="inputMenuSeo">link / seo</label>
-          <input type="text" class="form-control" id="inputMenuSeo" name="inputMenuSeo" placeholder="">
+          <label for="inputFile">link / seo</label>
+          <input type="file" class="form-control" id="inputFile" name="inputFile">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>      
@@ -57,13 +53,13 @@
         <tbody>
           <?php 
             $i=1;
-            foreach ($dataKategori->result() as $row) {
+            foreach ($dataDetail->result() as $row) {
 
               ?>
               <tr>
                 <td><?= $i++ ?></td>
-                <td><?= $row->nama_menu ?></td>
-                <td><?= $row->keterangan_menu ?></td>
+                <td><?= $row->judul_informasi ?></td>
+                <td><?= $row->jenis_detail ?></td>
                 <td>
                   <a href="<?= base_url()?>admin/informasi_proses/edit">edit</a>
                   <a href="<?= base_url()?>admin/informasi_proses/hapus">hapus</a>

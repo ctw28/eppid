@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Sub_kategori_proses extends CI_Controller {
+class Detail_proses extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();		
@@ -11,18 +11,20 @@ class Sub_kategori_proses extends CI_Controller {
 
 	public function index()
 	{
-		$data['id_menu'] = $this->input->post('inputParentSubKategori');
-		$data['judul_informasi'] = $this->input->post('inputNamaSubKategori');
-		$data['keterangan_informasi'] = $this->input->post('inputKeteranganSubKategori');
-		$data['informasi_parent'] = $this->input->post('inputParent');
+		$data['id_informasi'] = $this->input->post('inputNamaMenu');
+		$data['keterangan_menu'] = $this->input->post('inputKeteranganMenu');
+		$data['menu_seo'] = $this->input->post('inputMenuSeo');
+		if($this->input->post('inputParentMenu')=='')
+			$data['parent_menu'] = NULL;
+		else
+			$data['parent_menu'] = $this->input->post('inputParentMenu');
 
-		$this->adminModel->insertData('t_informasi', $data);
-		// if($this->adminModel->insertData('t_informasi', $data)){
-		// 	redirect('admin/informasi/sub_kategori');
-		// }
-		// else{
-		// 	echo "ada masalah. coba lagi";
-		// }
+		if($this->adminModel->insertData('t_menu', $data)){
+			redirect('admin/informasi/kategori');
+		}
+		else{
+			echo "ada masalah. coba lagi";
+		}
 
 	}
 	

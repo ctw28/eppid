@@ -24,5 +24,10 @@ class Informasi extends CI_Controller {
 		$this->load->view('admin/informasi-subkategori-tambah', $data);
 	}
 
+	public function detail()
+	{
+		$data['dataDetail'] = $this->adminModel->showDetail();
+		$this->load->view('admin/informasi-detail-tambah', $data);
+	}
 
 }

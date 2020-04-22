@@ -12,7 +12,7 @@ class Informasi extends CI_Controller {
 		$key = $this->uri->segment(3);
 		
 		$allMenu = $this->webModel->getAllMenu();
-		$informationByKategori = $this->webModel->getInformationByKategori($key);
+		$informationByKategori = $this->webModel->getInformationByKategori('informasi/tampil/'.$key);
 
 		$part['list_menu'] = [];
 		$part['list_informasi'] = array();
@@ -42,15 +42,33 @@ class Informasi extends CI_Controller {
 		foreach ($informationByKategori->result() as $row) {
 			$idInformasi		= $row->id_informasi;
 			$informasiKategori 	= $row->nama_menu;
-			// $part['list_informasi']['kategori'] = $informasiKategori;
+			$part['kategori'] = $informasiKategori;
 			$informasi = array();
 			$data = array();
 			$kategori = $row->nama_menu;
 
 			$informasi = array(
 				'id'=>$idInformasi,
-				'judul_informasi'=>$row->judul_informasi
+				'judul_informasi'=>$row->judul_informasi,
+				'info'=> array()
 			);
+
+		
+			
+			// jika memiliki detail
+					
+			$informationDetail = $this->webModel->getInformationDetail($idInformasi);
+			if($informationDetail->num_rows()>0){
+
+				foreach($informationDetail->result() as $detail) {
+					$detail = array(
+							'jenis_detail'=>$detail->jenis_detail,
+							'informasi_detail'=>$detail->informasi_detail
+					);
+					array_push($informasi['info'], $detail);				
+				}
+			}
+
 
 			$informationSubKategori = $this->webModel->getInformationDetailByParent($idInformasi);
 			
@@ -58,8 +76,21 @@ class Informasi extends CI_Controller {
 				$informasi = array(
 					'id'=>$idInformasi,
 					'judul_informasi'=>$row->judul_informasi,
+					'info' => array(),
 					'sub_informasi' => array()
 				);
+					
+				$informationDetailList = $this->webModel->getInformationDetail($idInformasi);
+				if($informationDetailList->num_rows()>0){
+
+					foreach($informationDetailList->result() as $detail) {
+						$detail = array(
+								'jenis_detail'=>$detail->jenis_detail,
+								'informasi_detail'=>$detail->informasi_detail
+						);
+						array_push($informasi['info'], $detail);				
+					}
+				}
 
 				foreach ($informationSubKategori->result() as $subMenu) {
 					$data = array(
@@ -79,6 +110,7 @@ class Informasi extends CI_Controller {
 				array_push($informasi['sub_informasi'], $data);				
 				}
 			} //end jika memiliki sub kategori
+			// array_push($informasi, $test);				
 			array_push($part['list_informasi'], $informasi);
 		}
 		// echo json_encode($part['list_informasi']);

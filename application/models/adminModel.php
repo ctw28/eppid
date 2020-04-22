@@ -2,22 +2,28 @@
 
 class adminModel extends CI_model {
 	
-	public function showData($table, $limit=0, $parent_menu=TRUE)
+	public function showData($table, $limit=0, $parent_menu=NULL)
 	{
 		$this->db->limit($limit);
-		$this->db->where('parent_menu', NULL, $parent_menu);
+		$this->db->where('parent_menu', $parent_menu);
 		return$this->db->get($table);		 
 	}
+	
 	public function showSubKategori()
 	{
 		$query = "SELECT * FROM t_menu INNER JOIN t_informasi ON t_menu.id_menu = t_informasi.id_menu WHERE parent_menu IS NOT NULL AND informasi_parent IS NULL";
+		return $this->db->query($query);		 
+	}	
+
+	public function showDetail()
+	{
+		$query = "SELECT * FROM t_informasi_detail RIGHT JOIN t_informasi ON t_informasi_detail.id_informasi = t_informasi.id_informasi";
 		return $this->db->query($query);		 
 	}
  
 	public function insertData($table, $data)
 	{
 		$this->db->insert($table,$data);
-		return ($this->db->affected_rows() != 1) ? false : true;
 	}
 
 	public function kategoriUpdate($key, $data)

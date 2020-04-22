@@ -32,8 +32,6 @@ class Home extends CI_Controller {
 			}
 
 		}
-
-
 		// print_r($part['list_menu']);
 		$this->load->view('home-view', $part);
 	}

@@ -1,65 +1,80 @@
-
-<!-- 	<h2><?= $list_informasi['kategori'];?></h2>
- -->
-	<div id="accordion" style="background-color: #FDFFD7;">
-
+<div class="card border-light bg-primary mb-3">
+  	<div class="card-header"><?= $kategori;?></div>
+	<div class="list-group">
 	<?php 
 		$i = 1;
 		foreach ($list_informasi as $list) {
 	?>
-		<div class="card-header" id="heading<?= $i;?>">
-			<h5 class="mb-0">
-				<button class="btn list-container" data-toggle="collapse" data-target="#collapse<?= $i;?>" aria-expanded="true" aria-controls="collapse<?= $i;?>">
-					<?= $i?>. 
-					<?= $list['judul_informasi'];?>
-				</button>
-			</h5>
-		</div>
 
-		<div id="collapse<?= $i;?>" class="collapse" aria-labelledby="heading<?= $i;?>" data-parent="#accordion" style="border: 1px solid #0057A8;">
-			<div class="card-body">
-<?php
-						if(isset($list['sub_informasi'])){					
-?>
-				<table class="table table-sm">
-					<thead>
-						<th width="5%">No</th>
-						<th width="80%">Jenis</th>
-					</thead>
-					<tbody>
-						<?php 
-						$a=1;
-							foreach ($list['sub_informasi'] as $subList) {
-							?>
-								<tr>
-									<td><?= $a++; ?></td>
-									<td><?= $subList['judul_informasi'] ?>
-									<?php 
-									foreach ($subList['detail'] as $detail) {
-									?>
-									<a style="margin: 0 20px" href="<?= $detail['informasi_detail'] ?>"><?= $detail['jenis_detail'] ?> </a>
-									<?php 
-									}
-									?>
-									</td>
-								</tr>
-							<?php 
-							}
-						}
-						else {
-							echo "No Data";
+		<div class="list-group-item list-group-item-action flex-column align-items-start">
+		    <div class="d-flex w-100 justify-content-between">
+		      	<h5 class="mb-2 h5 list-item-primary-text mt-2"><?= $i?>. <?= $list['judul_informasi'];?>
+			<!-- </div> -->	
+				<?php
+				if(isset($list['info'])){
+					foreach ($list['info'] as $info) {
+						$icon = 'fa-download';
+						$label = 'badge-warning';
+						if($info['jenis_detail']=='url'){
+							$icon = 'fa-eye';
+							$label = 'badge-success';
 						}
 						?>
-						
-					</tbody>
-				</table>
-			</div>
+							<a class="badge <?= $label ?>" href="<?= $info['informasi_detail'] ?>"><i class="fa <?= $icon ?>"></i> <?= $info['jenis_detail']?></a>
+						<?php
+					}
+				}
+			echo "</h5></div>";
+		if(isset($list['sub_informasi'])){					
+		?>
+			<table class="table table-sm sub-info-table">
+				<thead>
+					<tr>
+					<th class="text-center">No</th>
+					<th style="width: 80%">Jenis</th>
+					<th class="text-center">Informasi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php 
+					$a=1;
+						foreach ($list['sub_informasi'] as $subList) {
+						?>
+							<tr>
+								<td class="text-center"><?= $a++; ?></td>
+								<td><?= $subList['judul_informasi'] ?></td>
+								<td class="text-center">
+								<?php 
+								foreach ($subList['detail'] as $detail) {
+
+									$label = 'badge-warning';
+									if($detail['jenis_detail']=='url')
+										$label = 'badge-success';
+
+								?>
+									<a class="badge <?= $label ?>" href="<?= $detail['informasi_detail'] ?>"><?= $detail['jenis_detail'] ?></a>
+								<?php 
+								}
+								?>
+								</td>
+							</tr>
+						<?php 
+						}
+						?>
+				</tbody>
+			</table>
+			<?php
+			}
+			?>
+
 		</div>
-	<?php 
-			$i++;
-		
-	}
+
+	<?php
+		$i++;
+		}			
 	?>
 
 	</div>
+</div>
+
 
