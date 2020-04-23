@@ -4,111 +4,112 @@
 	<title>E-PPID BWS SULAWESI IV KENDARI</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/37b1b66b4f.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/theme.css">
 
 </head>
 <body>
-
-	<header>
-		<div class="container primary-color-container top-header-container">
-			<img src="assets/images/logo/logo-pu-small.png" alt="logo-pu-small"> Website BWS Sulawesi IV Kendari
-		</div>
-    	<div class="container header-banner-background">
-    		<img src="assets/images/logo/logo-pu.png" alt="logo-pu" class="header-logo"> <span class="header-title-text">Pejabat Pengelola Informasi dan Dokumentasi (PPID) <br> Balai Wilayah Sungai Sulawesi IV Kendari</span>
-    	</div>
-		<div class="container primary-color-container">
-    		<?php $this->load->view($menu); ?>   
-		</div>
+    <header>
+        <div class="container primary-color-container top-header-container">
+            <img src="assets/images/logo/logo-pu-small.png" alt="logo-pu-small"> Website BWS Sulawesi IV Kendari
+        </div>
+        <div class="container">
+            <div class="row">
+                <img src="assets/images/banner.jpg" alt="logo-pu" width="100%">
+            </div>
+        </div>
+        <div class="container primary-color-container">
+            <?php $this->load->view($menu); ?>   
+        </div>
     </header>
+    
+    <!-- ini main conten -->
     <section class="container main-section">
-      <h2>INFORMASI PUBLIK YANG WAJIB DISEDIAKAN DAN DIUMUMKAN SECARA BERKALA</h2>
-      
-    <div id="accordion" style="background-color: #FDFFD7;">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn list-container" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              1. Informasi tentang Profil BWS Sulawesi IV Kendari
-            </button>
-          </h5>
+        <div class="row py-3 sidebar-home">
+            <div class="col-lg-3 col-sm-12">
+                <img src="assets/images/kantor-bws.jpeg" width="100%" height="200px">
+                <div class="pt-2">
+                    <h6>Hubungi Kami</h6>
+                    <p>Sekretariat PPID BWS Sulawesi IV Kendari <br> Jalan Balai Kota IV No.1 Kendari</p>
+                    <ul>
+                        <li><i class="fa fa-envelope"></i> sisdasulawesi4@gmail.com</li>
+                        <li><i class="fa fa-phone"></i> (+62401) 3122818</li>
+                        <li><i class="fa fa-globe"></i> http://sda.pu.go.id/bwssulawesi4</li>
+                    </ul>
+                    <h6>Sosial Media</h6>
+                    <i class="fa fa-facebook"></i> <i class="fa fa-instagram"></i> <i class="fa fa-youtube"></i> 
+                </div>
+            </div>
+            <div class="col-lg-9 col-sm-12">
+                <h2>Selamat datang di Layanan e-PPID BWS SULAWESI IV KENDARI</h2>
+                <p>Terima Kasih telah mengunjungi Layanan e-PPID BWS Sulawesi IV Kendari.</p>
+                <p>Layanan ini merupakan sarana layanan online bagi pemohon Informasi Publik sebagai wujud pelaksanaan keterbukaan Informasi Publik</p>
+                <p>Berikut daftar informasi publik BWS Sulawesi IV Kendari :</p>
+                <button class="btn btn-info">Informasi Berkala</button>
+                <button class="btn btn-info">Informasi Serta Merta</button>
+                <button class="btn btn-info">Informasi Tersedia Setiap Saat</button>
+                <h5 class="pt-3">Berita BWS Sulawesi IV Kendari</h5>
+                <div class="col-12 py-3">
+                    <div class="row">
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This is a longer card with supporting text below as a natural.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-deck">
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This is a longer card with supporting text below as a natural.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top" src="assets/images/kantor-bws.jpeg" alt="Card image cap">
+                                <div class="card-body">
+                                <h6 class="card-title">Judul Berita Balai</h6>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="border: 1px solid #0057A8;">
-          <div class="card-body">
-            <table class="table table-sm">
-              <thead>
-                <th width="5%">No</th>
-                <th width="75%">Jenis</th>
-                <th width="20%" class="text-center">Informasi / Dokumen</th>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Informasi mengenai kedudukan, domisili, beserta alamat lengkap dan kontak</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Tugas dan Fungsi</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Struktur Organisasi</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Gambaran Umum Satuan Kerjak</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>Profil Singkat Pejabat Struktural</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>Laporan harta kekayaan bagi pejabat negara yang telah diperiksa, diverifikasi dan telah dikirimkan oleh KPK ke BWS Sulawesi IV Kendari untuk diumumkan</td>
-                  <td class="text-center"><a href="#" class="btn btn-info btn-sm">Lihat</a></td>
-                </tr>
-              </tbody>
-            </table>
-            <ul>
-            </ul>
-          </div>
-        </div>
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn list-container collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              2. Ringkasan informasi tentang program dan/atau kegiatan yang sedang dijalankan dalam lingkup BWS Sulawesi IV Kendari
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </div>
-        </div>
-        <div class="card-header" id="headingThree">
-          <h5 class="mb-0">
-            <button class="btn list-container collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              3. ringkasan  informasi  tentang  kinerja  dalam  lingkup  BWS Sulawesi IV Kendari
-            </button>
-          </h5>
-        </div>
-        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-          <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-     
-
     </section>
+
     <footer class="container primary-color-container">
     	© 2019 | P P I D - Balai Wilayah Sungai Sulawesi IV Kendari. All Rights Reserved. By SISDA BWS Sulawesi IV Kendari
     </footer>
